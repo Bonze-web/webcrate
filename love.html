@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>猜大小</title>
+    <script type="text/javascript">
+
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>你喜欢我吗</h1>
+        <form action="" >
+            <label for="small">喜欢</label>
+            <input type="radio" name="n" id="small" value="0">
+            <label for="lager">不喜欢</label>
+            <input type="radio" name="n" id="lager" value="1">
+            <input type="button" value="确定" onclick="deg(form.n.value)">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+       
+        
+        function deg(n) {
+            var m;
+            if(n==1){
+                m = Math.floor(Math.random()*10);
+               if(m<=9&&m>=5){
+                alert("不喜欢才怪")
+               }
+               else{
+                alert("不喜欢我还喜欢谁")
+               }
+            }
+           if(n==0){
+            m = Math.floor(Math.random()*10);
+               if(m<=4&&m>=0){
+                alert("喜欢就亲我")
+               }
+               else{
+                alert("喜欢就不要离开我啊")
+           }
+        }
+        }
+    </script>
+</body>
+
+</html>
