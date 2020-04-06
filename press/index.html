@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>判断按键的个数</title>
+    <script type="text/javascript">
+
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script type="text/javascript">
+        /* var str =new Array();
+        str = prompt("请按第一排键");       把里面的数赋给str这个整体
+        document.write("第一排按键个数为"+str.length);
+        var str1 = new Array();
+        str1 = prompt("请按第二排键")
+        document.write("<br>第二排按键个数为"+str1.length);
+        var str2 = new Array();
+        str2 = prompt("请按第二排键")
+        document.write("<br>第三排按键个数为"+str2.length); */
+        var str = new Array("q","w","e","r","t","y","u","i","o","p");
+        var str1 = new Array("a","s","d","f","g","h","j","k","l");
+        var str2 = new Array("z","x","c","v","b","n","m");
+        
+        var press = new Array();
+        var sum1=0,sum2=0,sum3=0;
+
+        var key1 = new Array();
+        var key2 = new Array();
+        var key3 = new Array();
+
+        press =prompt("请按键");
+        for(var i=0;i<press.length;i++){
+            for(var j=0;j<str.length;j++){
+                if(str[j]==press[i]){
+                    key1[sum1]=press[i]         /* 为了避免赋空值给key,所以使用sum,这样key里面的每个位都会被填满 */
+                    sum1++;
+                          /* 数组名表示第一个数组 */
+                }
+            }
+            for(var a=0;a<str1.length;a++){
+                if(str1[a]==press[i]){
+                    key2[sum2]=press[i] 
+                    sum2++;
+                }
+            }
+            for(var b=0;b<str2.length;b++){
+                if(str2[b]==press[i]){
+                    key3[sum3]=press[i] 
+                    sum3++; 
+                }
+            }
+           
+        }
+        document.write("第一排按键数为:"+sum1+" 按过的键是");
+        for(var t1=0;t1<key1.length;t1++){
+            document.write(key1[t1])+"&nbsp";
+        }
+        document.write("<br>第二排按键数为:"+sum2+" 按过的键是");
+        for(var t2=0;t2<key2.length;t2++){
+            document.write(key2[t2]+"&nbsp");
+        }
+        document.write("<br>第三排按键数为: "+sum3+" 按过的键是");
+        for(var t3=0;t3<key3.length;t3++){
+            document.write(key3[t3]+"&nbsp");
+        }
+    </script>
+</body>
+
+</html>
