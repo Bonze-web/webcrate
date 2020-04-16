@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房屋登记</title>
+    <script type="text/javascript">
+
+    </script>
+
+    <style>
+        table{
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+            <form action="" id="form1">
+                <table>
+                   <caption>房屋出租登记</caption>
+                    <tr>
+                        <td><label for="data1">地 段</label></td>
+                        <td> 
+                            <input type="text" list="data" id="data1" required>
+                            <datalist id="data" >
+                                <option value="朝阳区" id="">朝阳区</option>
+                                <option value="朝阳区" id="">芙蓉区</option>
+                                <option value="朝阳区" id="">岳麓区</option>
+                                <option value="朝阳区" id="">天心区</option>
+                            </datalist>   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="build">房源类别</label></td>
+                        <td>
+                            <input type="text" list="floor" id="build" required>
+                            <datalist id="floor" >
+                                <option value="高层" id="">高层</option>
+                                <option value="底层" id="">底层</option>
+                                <option value="双层" id="">双层</option>
+                                <option value="隔间" id="">隔间</option>
+                            </datalist>  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="data2">房源户型</label></td>
+                        <td>
+                            <input type="text" list="house" id="data2" required>
+                            <datalist id="house" >
+                                <option value="一室一厅" id="">一室一厅</option>
+                                <option value="两室一厅" id="">两室一厅</option>
+                                <option value="三室一厅" id=""></option>
+                                <option value="四室一厅" id="">四室一厅</option>
+                            </datalist>  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">小区名称</label>                            
+                        </td>
+                        <td>
+                            <input type="text" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">使用面积</label>                            
+                        </td>
+                        <td>
+                            <input type="text">(平方米)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" onclick="a()"><input type="reset"></td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+
+    <script type="text/javascript">
+        function con() {
+            var b = document.getElementById("form1");
+            var e = document.getElementsByTagName("input");
+            var t = 0;
+            for(var j=0;j<e.length;j++){
+                if(e[j].value == ""){
+                    if(t<4){
+                        alert("内容不能为空");
+                        break;
+                    }
+                }
+                else{
+                    t++
+                }
+            }
+            return t;
+        }
+        function a() {
+            var b = document.getElementById("form1");
+            var e = document.getElementsByTagName("input");
+            var arr = new Array("地段","房源类别","房源户型","小区名称","使用面积");
+            var result = "";
+           
+            if( con() >=4 ){
+                    for(var i=0;i<e.length;i++){
+                        if(arr[i]==undefined||e[i].value==""){
+                                continue;
+                        }
+                        else{
+                                result += arr[i] +":"+e[i].value+"\n";
+                        }
+                    }
+                    alert(result);
+            }               
+        }
+    </script>
+</body>
+
+</html>
