@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script type="text/javascript">
+
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .Login{
+            width: 260px;
+            /* height: 260px; */
+            border: 1px #ccc solid;
+            background: url(./bg.jpg) 0px 0px;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        .head a{
+            /* display: block; */
+            width: 130px;
+            height: 40px;
+         /*    background-color: #aaa; */
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            color:#fff;
+          
+            border-bottom: 1px #fff solid;
+        }
+        .head a:hover{
+           /*  background-color: #000; */
+            color: #077AAA;
+            border-bottom: 2px #077AAA solid;
+        }
+        .head::after,
+        .head::before{
+            clear: both;
+            display: table;
+            content: "";
+            *zoom: 1;
+        }
+        .body{
+            margin: 20px 0;
+            margin-bottom: 10px;
+        }
+        .body-img{
+            margin: 0px auto;
+            width: 135px;
+            height: 135px;
+            border: 1px #ccc solid;
+            background: url(./ewm01.png) no-repeat 0px 0px;
+        }
+        p{
+            text-align: center;
+           /*  font-size: 14px; */
+           color:#fff;
+        }
+        .foot{
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .foot a{
+            color: #fff;
+            /* font-size: 14px; */
+        }
+
+            /* 账户登录的CSS */
+        .box_input{
+            text-align: center;         /* text-align对行内块元素有效 */
+        }
+        .box_input input {
+            width: 250px;
+            height: 40px;
+            margin: 10px 0;
+            border: 0;              /* 去除未选中的边框 */
+            outline: none;          /* 去除选中后的边框 */
+            border-radius: 5px;     /* 块级元素,行内块元素都能设置圆角 */
+            font-size: 16px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: orange;
+        }
+        .box_state{
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            margin: 5px;
+            margin: 0 auto;
+        }
+        .box_state a{
+            color: #fff;
+        }
+        .box_state a:hover{
+            color: orange;
+        }
+        .box_state img{
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .box_Login a{
+            margin: 10px auto;
+            display: block;
+            background-color: #146FDF;
+            width: 250px;
+            height: 45px;
+            text-align: center;
+            color: #fff;
+            /* font-size: 18px; */
+            font:500 18px "微软雅黑";
+            line-height: 45px;
+            /* font-weight: 500; */
+            /* font: 18px "微软雅黑"; */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Login">
+            <div class="head"><a href="javascript:;" onclick="code()">扫码登录</a> <a href="javascript:;" onclick="chang()">密码登录</a></div>
+            <div id="tran">
+                <div class="body"><div class="body-img"></div><p>请使用手机支付扫码</p></div>
+                <!-- <div >
+                    <div class="box_input">
+                        <input type="text" name="" id="" placeholder="QQ号码/手机/邮箱">
+                        <input type="text" name="" id="" placeholder="请输入你的QQ密码">
+                    </div>
+                </div>
+                <div class="box_state"><img src="checked.jpg" alt=""><a href="###">记住登录的状态</a></div>
+                <div class="box_Login"><a href="###">登录</a></div> -->
+            </div>
+            <div class="foot"><a href="###">使用帮助</a> <span>|</span> <a href="###">下载手机支付宝</a></div>
+    </div>
+
+    <script type="text/javascript">
+            function chang() {
+                document.getElementById("tran").innerHTML = " <div><div class='box_input'><input type='text' name='' id='us' placeholder='支付宝号码/手机/邮箱'><input type='text' name=''id='ps' placeholder='请输入你的支付宝密码'></div></div><div class='box_state'><img src='checked.jpg' alt=''><a href='###'>记住登录的状态</a></div><div class='box_Login'><a href='javascript:;' onclick='check()'>登录</a></div>"
+            }
+            function code() {
+                document.getElementById("tran").innerHTML = " <div class='body'><div class='body-img'></div><p>请使用手机支付扫码</p></div>"
+            }
+
+            function check() {
+                var user = "杨宗标", password = 123456;
+                var us  = document.getElementById("us").value
+                var ps  = document.getElementById("ps").value
+                if(us == "杨宗标" && ps == 123456){
+                    window.location.href = "https://www.alipay.com/";
+                }
+                else{
+                    alert("输入错误");
+                }
+            }
+    </script>
+</body>
+
+</html>
